@@ -13,5 +13,5 @@ void main(){
 	printf("fd is %d\n", fd);
 	setuid(getuid()); /// downgrade to normal user, can also use seteuid to change effective user ID
 	v[0]="/bin/bash";v[1]=0;
-	execve(v[0],v,0);
+	execve(v[0],v,0);  //child process inherit parent's file descriptor, so can write on fd
 }
